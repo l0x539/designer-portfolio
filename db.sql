@@ -9,5 +9,5 @@ CREATE TABLE videos (
     id int NOT NULL AUTO_INCREMENT,
     url VARCHAR(1000),
     title VARCHAR(100),
-    id PRIMARY KEY (id)
+    PRIMARY KEY (id)
 );
