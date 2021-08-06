@@ -13,8 +13,8 @@ const Item = ({url, isFirst}) => {
     }
 
     return (
-        <div className={`container__video ${isFirst?'container__first':''}`} onMouseEnter={startPlaying} onMouseLeave={pausePlaying}>
-            <ReactPlayer url={url} loop playing={playing} />
+        <div className={`container__video ${isFirst?'container__first':'container__video--lised'}`} onMouseEnter={startPlaying} onMouseLeave={pausePlaying}>
+            <ReactPlayer url={url} loop playing={playing} muted={true} style={{width:"1px", height: "1px"}} width={"100%"} height={isFirst?"unset":"100%"} />
         </div>
     )
 }

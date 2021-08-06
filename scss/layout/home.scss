@@ -1,0 +1,39 @@
+@use "sass:math";
+.container {
+    &__videos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        @include respond(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include respond(mobile) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        gap: 0px 0px;
+        grid-auto-flow: row;
+    }
+    &__video {
+        overflow: hidden;
+        height: math.div(100vw, 4);
+        @include respond(tablet) {
+            height: math.div(100vw, 3);
+        }
+        @include respond(mobile) {
+            height: math.div(100vw, 2);
+        }
+    }
+    &__video--lised video {
+        right: 0; 
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+        width: auto !important; 
+        height: 100%  !important; 
+        z-index: -100;
+        background-size: cover;
+        overflow: hidden;
+    }
+    &__first {
+        width: 100%;
+    }
+}
