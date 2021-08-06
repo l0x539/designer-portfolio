@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+body {
+    font-family: $font;
+    font-weight: normal;
+}
+
+.root {
+    overflow-x: hidden;
+    min-height:100vh;
+    background-color:var(--col-background);
+    color:var(--col-text-2);
+  
+    cursor: default;
+  }

@@ -1,0 +1,74 @@
+.socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: $socials-background-color;
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    min-height: 3rem;
+    @include respond(mobile) {
+        justify-content: space-around;
+        padding: 0 2rem;
+    }
+    &__item {
+        @include respond(tablet) {
+            font-size: 1.5rem;
+        }
+    }
+    &__item span {
+        @include respond(mobile) {
+            display: none;
+            visibility: hidden;
+        }
+        margin: 0 2rem;
+        cursor: pointer;
+    }
+
+    &__instagram {
+        @include respond(mobile) {
+            content: url(/SVG/instagram.svg);
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+        
+    }
+    &__vimeo {
+        @include respond(mobile) {
+            content: url(/SVG/vimeo.svg);
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+
+    }
+    &__dribble {
+        @include respond(mobile) {
+            content: url(/SVG/dribble.svg);
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+
+    }
+    &__behance {
+        @include respond(mobile) {
+            content: url(/SVG/behance.svg);
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+
+    }
+    &__fiverr {
+        @include respond(mobile) {
+            content: url(/SVG/fiverr.svg);
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+        }
+
+    }
+}
