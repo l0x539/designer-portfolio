@@ -15,7 +15,7 @@ class Footer extends Component {
                 <div className="footer__logo">
                     <Image alt="Portfolio Image" src="/logoFooter.png" width={128*1.3} height={43*1.3} /> 
                 </div>
-                <div className="footer__copyright">Made by <a href="https://0x539.co" target="_blank"><span className="footer__first">S</span>ikouk <span className="footer__last">N</span>ourdin</a></div>
+                <div className="footer__copyright">Made by <a href="https://0x539.co" target="_blank" rel="noreferrer"><span className="footer__first">S</span>ikouk <span className="footer__last">N</span>ourdin</a></div>
             </footer>
         )
     }
