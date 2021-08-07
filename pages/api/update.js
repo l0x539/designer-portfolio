@@ -80,7 +80,7 @@ export default async function logout(req, res) {
             } else {
                 await excuteQuery({
                     query: 'INSERT INTO videos (id, url, title) VALUES (?, ?, ?)',
-                    values: [1, req.body.first_video, req.body.first_video]
+                    values: [1, req.body.first_video, "first video"]
                 });
             }
         }
