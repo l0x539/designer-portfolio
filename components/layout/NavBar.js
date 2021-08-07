@@ -15,7 +15,7 @@ class NavBar extends Component {
                 <div className="nav__headline"></div>
                 <div className="nav__container">
                     <div className="nav__logo">
-                        <Image src="/logo.png" width={125*0.8} height={100*0.8} />
+                        <Image alt="Portfolio Image" src="/logo.png" width={125*0.8} height={100*0.8} />
                     </div>
                 </div>
             </div>
