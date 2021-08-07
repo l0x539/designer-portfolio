@@ -6,17 +6,27 @@ class Layout extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            socials: {
+                instagram: "",
+                vimeo: "",
+                dribble: "",
+                behance: "",
+                fiverr: "",
+            }
         }
+    }
+
+    componentDidMount () {
+        this.setState({socials: this.props.socials})
     }
 
     render () {
         return (
             <main className="root">
-                <Header />
-                <div className="content">
-                    {this.props.children}
-                </div>
+                <Header socials={this.props.socials} username={this.props.username} description={this.props.description} image={this.props.image} />
+                    <div className="content">
+                        {this.props.children}
+                    </div>
                 <Footer />
             </main>
         )
