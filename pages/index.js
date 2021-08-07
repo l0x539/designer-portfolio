@@ -6,16 +6,6 @@ import Home from '../components/pages/Home'
 import excuteQuery from "../lib/db";
 
 export const getServerSideProps = async ({ req, res }) => {
-    await applySession(req, res, {name: 'auth'});
-    if (!req.session.user) {
-        req.session.destroy()
-        return {
-          redirect: {
-            destination: '/login',
-            permanent: false,
-          },
-        }
-      }
     const videos = await excuteQuery({
         query: 'SELECT * FROM videos',
     });
