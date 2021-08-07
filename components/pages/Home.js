@@ -22,7 +22,7 @@ class Home extends Component {
             <Item url={this.state.firstVideo?.url} isFirst />
             <div className="container__videos">
                 {this.state.videos?.length?
-                this.state.videos.map((v, i) => <Item url={v} key={i} />)
+                this.state.videos.map((v, i) => <Item url={v.url} key={i} />)
                 :
                 <div className="container__center">
                     {'No videos yet!'}

@@ -88,11 +88,11 @@ export default async function logout(req, res) {
             try {
                 const result = await excuteQuery({
                     query: 'INSERT INTO videos (url, title) VALUES (?, ?)',
-                    values: [req.body.video, req.body.video]
+                    values: [req.body.video, "video"]
                 });
-                return res.status(200).json({message: "Successfully deleted"})
+                return res.status(200).json({message: "Successfully added"})
             } catch {
-                return res.status(500).json({message: "Error deleting"})
+                return res.status(500).json({message: "Error"})
     
             }
         }
