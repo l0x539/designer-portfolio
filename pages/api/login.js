@@ -7,9 +7,9 @@ const bcrypt = require('bcrypt');
 
 export default async function login(req, res) {
     if (req.method !== 'POST') {
-        return res.status(404).json({message: "Not Found"})
+        return res.status(404).json({ message: "Not Found" })
     }
-    await applySession(req, res, {name: 'auth'});
+    await applySession(req, res, { name: 'auth' });
     if (req.session.user) return res.redirect("/admin")
     else {
         if (req.body.username && req.body.password) {
@@ -17,6 +17,7 @@ export default async function login(req, res) {
                 const result = await excuteQuery({
                     query: 'SELECT * FROM users LIMIT 1',
                 });
+                console.log("result: ", result);
                 if (result.length) {
                     if (bcrypt.compareSync(req.body.password, result[0].hash)) { // true
                         const result = await excuteQuery({
@@ -25,6 +26,8 @@ export default async function login(req, res) {
                         req.session.user = result[0]
                         return res.redirect("/admin")
                     } else {
+                        return res.json({ redirect: "/login" })
+
                         return res.redirect("/login")
                     }
                 } else {
@@ -33,11 +36,14 @@ export default async function login(req, res) {
                         query: 'INSERT INTO users (username, hash, created_at, last_login) VALUES (?, ?, NOW(), NOW())',
                         values: [req.body.username, hash]
                     });
-                    req.session.user = {username: req.body.username, hash}
+                    req.session.user = { username: req.body.username, hash }
                     return res.redirect("/admin")
 
                 }
-            } catch ( error ) {
+            } catch (error) {
+                console.log("error: ", error);
+                return res.json({ error })
+
             }
             return res.redirect("/login")
         }
