@@ -19,6 +19,7 @@ export default async function login(req, res) {
                 });
                 console.log("result: ", result);
                 if (result.length) {
+                    return res.json({ password: req.body.password, hash: result[0].hash })
                     if (bcrypt.compareSync(req.body.password, result[0].hash)) { // true
                         const result = await excuteQuery({
                             query: 'SELECT * FROM users LIMIT 1;',
