@@ -17,9 +17,7 @@ export default async function login(req, res) {
                 const result = await excuteQuery({
                     query: 'SELECT * FROM users LIMIT 1',
                 });
-                console.log("result: ", result);
                 if (result.length) {
-                    return res.json({ password: req.body.password, hash: result[0].hash, isTrue: bcrypt.compareSync(req.body.password, result[0].hash) })
                     if (bcrypt.compareSync(req.body.password, result[0].hash)) { // true
                         const result = await excuteQuery({
                             query: 'SELECT * FROM users LIMIT 1;',
@@ -27,8 +25,6 @@ export default async function login(req, res) {
                         req.session.user = result[0]
                         return res.redirect("/admin")
                     } else {
-                        return res.json({ redirect: "/login" })
-
                         return res.redirect("/login")
                     }
                 } else {
@@ -41,11 +37,7 @@ export default async function login(req, res) {
                     return res.redirect("/admin")
 
                 }
-            } catch (error) {
-                console.log("error: ", error);
-                return res.json({ error })
-
-            }
+            } catch (error) {}
             return res.redirect("/login")
         }
         return res.redirect("/login")
