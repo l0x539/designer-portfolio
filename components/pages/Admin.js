@@ -20,6 +20,7 @@ class Admin extends Component {
     componentDidMount () {
         const videos = this.props.videos
         const firstVideo = videos?.shift()
+        videos.reverse()
         console.log("firstVideo", firstVideo);
         this.setState({firstVideo: firstVideo})
         this.setState({name: this.props.name})
