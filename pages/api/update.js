@@ -74,7 +74,7 @@ export default async function logout(req, res) {
             });
             if (videos?.length) {
                 await excuteQuery({
-                    query: 'UPDATE videos SET url=? where id=0',
+                    query: 'UPDATE videos SET url=? where id=1',
                     values: [req.body.first_video]
                 });
             } else {

@@ -8,7 +8,6 @@ class Socials extends Component {
         }
     }
     componentDidMount () {
-        console.log("instagram", this.props.instagram);
     }
 
     render() {

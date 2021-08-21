@@ -21,7 +21,6 @@ class Admin extends Component {
         const videos = this.props.videos
         const firstVideo = videos?.shift()
         videos.reverse()
-        console.log("firstVideo", firstVideo);
         this.setState({firstVideo: firstVideo})
         this.setState({name: this.props.name})
         this.setState({image: this.props.image})
@@ -71,7 +70,6 @@ class Admin extends Component {
     }
 
     render () {
-        console.log("this.state.videos", this.state.videos);
         return (
             <main className="root">
                 <div className="content">
