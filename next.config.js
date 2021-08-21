@@ -4,7 +4,7 @@ const path = require('path')
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.discordapp.com'],
+    domains: ['*'], // ['cdn.discordapp.com'],
   },
   ...withReactSvg({
     include: path.resolve(__dirname, 'assets'),
