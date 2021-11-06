@@ -12,7 +12,7 @@ class Home extends Component {
   componentDidMount () {
     const videos = this.props.videos
     const firstVideo = videos?.shift()
-    videos.reverse()
+    videos?.reverse()
     this.setState({firstVideo: firstVideo})
     this.setState({videos})
   }
