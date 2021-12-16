@@ -108,7 +108,7 @@ class Admin extends Component {
                         </form>
                         {
                             this.state.firstVideo?
-                            <Item url={this.state.firstVideo.url} isFirst />
+                            <Item url={this.state.firstVideo.url} />
                             :
                             null
                         }
