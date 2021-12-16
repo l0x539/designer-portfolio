@@ -64,7 +64,7 @@
     }
     &__fiverr {
         @include respond(mobile) {
-            content: url(/SVG/fiverr.svg);
+            content: url(/SVG/opensea.svg);
             width: 2rem;
             height: 2rem;
             cursor: pointer;

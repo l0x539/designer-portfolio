@@ -93,7 +93,7 @@ class Admin extends Component {
                             <input type="text" name="vimeo" placeholder="Enter Vimeo"  />
                             <input type="text" name="dribble" placeholder="Enter Dribble"  />
                             <input type="text" name="behance" placeholder="Enter Behance"  />
-                            <input type="text" name="fiverr" placeholder="Enter Fiverr"  />
+                            <input type="text" name="fiverr" placeholder="Enter OpenSea"  />
                             <button type="submit" >Change</button>
                         </form>
                     </div>

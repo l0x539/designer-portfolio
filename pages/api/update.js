@@ -16,7 +16,7 @@ export default async function logout(req, res) {
 
         if (!socials?.length) {
             await excuteQuery({
-                query: 'INSERT INTO socials (instagram, vimeo, dribble, behance, fiverr) VALUES ("https://www.instagram.com/", "https://vimeo.com/", "https://dribbble.com/", "https://www.behance.net", "https://www.fiverr.com/")',
+                query: 'INSERT INTO socials (instagram, vimeo, dribble, behance, fiverr) VALUES ("https://www.instagram.com/", "https://vimeo.com/", "https://dribbble.com/", "https://www.behance.net", "https://opensea.io/")',
             });
         }
         if (req.body.instagram) {
