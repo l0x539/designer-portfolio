@@ -20,7 +20,7 @@ class Home extends Component {
   render () {
     return (
         <div className="container">
-            <Item url={this.state.firstVideo?.url} />
+            <Item url={this.state.firstVideo?.url} isFirst />
             <div className="container__videos">
                 {this.state.videos?.length?
                 this.state.videos.map((v, i) => <Item url={v.url} key={i} />)
